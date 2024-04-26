@@ -10,14 +10,11 @@ import androidx.recyclerview.widget.RecyclerView.ViewHolder
 class MensagemAdapter(
     private val lista: List<Mensagem>
 ): Adapter<MensagemAdapter.MensagemViweHolder>() {
-    inner class MensagemViweHolder(
-        val itemview: View
-    ): ViewHolder(itemview){
-
+   // MensagemViweHolder - é a classe que vai armezenar a visualização
+    inner class MensagemViweHolder(val itemview: View): ViewHolder(itemview){
         val textNome: TextView = itemview.findViewById(R.id.text_nome)
         val textUtima: TextView = itemview.findViewById(R.id.text_ultima)
         val textHorario: TextView = itemview.findViewById(R.id.text_horario)
-
     }
 
     //Esse método vai criar a visualização
@@ -32,11 +29,9 @@ class MensagemAdapter(
     }
 
     //getItemCount - Recupera a quantidade de itens, ele vai contar a quantidade de itens
-    override fun getItemCount(): Int {
-        return lista.size
-    }
+    override fun getItemCount(): Int =  lista.size
 
-    //Ao vincular o ViewHolder -
+    //Ao vincular o ViewHolder - Aqui é possivel acessar os recursos da visualização
     override fun onBindViewHolder(holder: MensagemViweHolder, position: Int) {
         val mensagem = lista[position]
         holder.textNome.text = mensagem.nome

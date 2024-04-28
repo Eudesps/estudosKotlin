@@ -21,6 +21,21 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.0"
+
+
+
         tools:itemCount="13"
         tools:listitem="@layout/item_lista" />
 </androidx.constraintlayout.widget.ConstraintLayout>
+
+<!--
+ LinearLayout
+ app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+ android:orientation="horizontal"
+ app:reverseLayout="false"
+
+ GridLayout
+ app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+ app:spanCount="3"
+ android:orientation="vertical"
+-->

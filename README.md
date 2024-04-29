@@ -10,5 +10,7 @@
 8. Interface
 9. RecycleView
 
-## Mais
-° GridLayout, LinearLayout (Horizontal, Vertical)
+## Gerenciadores de layout
+- GridLayoutManager
+- LinearLayoutManager (Horizontal, Vertical)
+- StaggeredGridLayoutManager

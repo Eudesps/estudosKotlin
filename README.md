@@ -9,3 +9,8 @@
 7. Pair_triple
 8. Interface
 9. RecycleView
+
+## Gerenciadores de layout
+- GridLayoutManager
+- LinearLayoutManager (Horizontal, Vertical)
+- StaggeredGridLayoutManager

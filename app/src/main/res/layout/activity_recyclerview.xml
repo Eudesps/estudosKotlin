@@ -38,4 +38,8 @@
  app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
  app:spanCount="3"
  android:orientation="vertical"
+
+ StaggeredGridLayoutManager
+ app:layoutManager="androidx.recyclerview.widget.StaggeredGridLayoutManager"
+ app:spanCount="2"
 -->

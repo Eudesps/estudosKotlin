@@ -1,0 +1,7 @@
+StaggeredGridLayoutManager -> Organiza os itens em uma grade, porém mantendo
+o tamanho da linha de acordo com o maior item.
+
+RecycleView: CardView
+São containers normalmente utiliza com listas de itens, para exibir
+informações de cada item, podemos adicionar diversos elementos de layout dentro
+de cards.

@@ -8,6 +8,7 @@ import androidx.core.view.WindowInsetsCompat
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import androidx.recyclerview.widget.StaggeredGridLayoutManager
 
 class RecyclerviewActivity : AppCompatActivity() {
 
@@ -35,7 +36,7 @@ class RecyclerviewActivity : AppCompatActivity() {
             Mensagem("Safira", "Vou sim", "13:39"),
             Mensagem("Camila", "foi ontem, hj não", "14:40"),
             Mensagem("José Eudes", "Olá, tudo bem?", "10:50"),
-            Mensagem("Pietro José", "Queijo com pão, ou é o contrario?", "10:50"),
+            Mensagem("Pietro José", "Queijo com pão, ou é o contrario? ", "10:50"),
             Mensagem("Maria Carla", "Olá, vem hj?", "9:15"),
             Mensagem("Maisa Souza", "Quero um carro novo", "20:10"),
             Mensagem("Manoel", "kkkkkkkkkkkkk e daí", "06:30"),
@@ -47,7 +48,19 @@ class RecyclerviewActivity : AppCompatActivity() {
 
         rvLista = findViewById(R.id.rv_lista)
         rvLista.adapter = MensagemAdapter(lista)
-       // rvLista.layoutManager = LinearLayoutManager(this)
+        rvLista.layoutManager = LinearLayoutManager(this, RecyclerView.VERTICAL,false)
+        //Gerenciadores de layout
+        /*
+        LinearLayoutManager
+        rvLista.layoutManager = LinearLayoutManager(this, RecyclerView.VERTICAL,false)
+        */
+        /*GridLayoutManager
+        SpanCount - quantidade de itens espalhados (quantidade de colunas)
         rvLista.layoutManager = GridLayoutManager(this,2)
+        */
+        /*
+        StaggeredGridLayoutManager
+        rvLista.layoutManager = StaggeredGridLayoutManager(2,RecyclerView.VERTICAL)
+         */
     }
 }

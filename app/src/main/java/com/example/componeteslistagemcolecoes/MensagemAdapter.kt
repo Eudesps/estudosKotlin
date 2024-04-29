@@ -12,9 +12,12 @@ class MensagemAdapter(
 ): Adapter<MensagemAdapter.MensagemViweHolder>() {
    // MensagemViweHolder - é a classe que vai armezenar a visualização
     inner class MensagemViweHolder(val itemview: View): ViewHolder(itemview){
-        val textNome: TextView = itemview.findViewById(R.id.text_nome)
+       /* val textNome: TextView = itemview.findViewById(R.id.text_nome)
         val textUtima: TextView = itemview.findViewById(R.id.text_ultima)
-        val textHorario: TextView = itemview.findViewById(R.id.text_horario)
+        val textHorario: TextView = itemview.findViewById(R.id.text_horario)*/
+
+       val textNome: TextView = itemview.findViewById(R.id.text_card_nome)
+       val textUtima: TextView = itemview.findViewById(R.id.text_card_ultima)
     }
 
     //Esse método vai criar a visualização
@@ -22,9 +25,12 @@ class MensagemAdapter(
        val layoutInflater = LayoutInflater.from(
            parent.context
        )
-       val itemview = layoutInflater.inflate(
+       /*val itemview = layoutInflater.inflate(
             R.layout.item_lista,parent,false
-       )
+       )*/
+        val itemview = layoutInflater.inflate(
+            R.layout.item_cardview,parent,false
+        )
         return MensagemViweHolder(itemview)
     }
 
@@ -35,7 +41,6 @@ class MensagemAdapter(
     override fun onBindViewHolder(holder: MensagemViweHolder, position: Int) {
         val mensagem = lista[position]
         holder.textNome.text = mensagem.nome
-        holder.textHorario.text = mensagem.horario
         holder.textUtima.text = mensagem.ultima
     }
 }

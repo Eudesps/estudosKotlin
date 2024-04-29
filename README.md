@@ -9,3 +9,6 @@
 7. Pair_triple
 8. Interface
 9. RecycleView
+
+## Mais
+° GridLayout, LinearLayout (Horizontal, Vertical)

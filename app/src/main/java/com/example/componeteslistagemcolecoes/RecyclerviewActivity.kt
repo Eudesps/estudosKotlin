@@ -1,10 +1,13 @@
 package com.example.componeteslistagemcolecoes
 
+import android.content.Intent
 import android.os.Bundle
+import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -47,11 +50,23 @@ class RecyclerviewActivity : AppCompatActivity() {
             )
 
         rvLista = findViewById(R.id.rv_lista)
-        rvLista.adapter = MensagemAdapter(lista)
+        //AQUI ESTOU PASSANDO UMA FUNCÃO LAMBIDA POR PARÂMETRO
+        rvLista.adapter = MensagemAdapter(lista){nome->
+            Toast.makeText(this,"Olá $nome", Toast.LENGTH_SHORT).show()
+            val intent = Intent(this, LinearLayoutActivity::class.java)
+            intent.putExtra("nome", nome)
+            startActivity(intent)
+        }
         rvLista.layoutManager = LinearLayoutManager(this, RecyclerView.VERTICAL,false)
-        //Gerenciadores de layout
-        /*
-        LinearLayoutManager
+
+        /*rvLista.addItemDecoration(
+            Aqui está sendo colocado uma linha separando cada item
+            DividerItemDecoration(this,RecyclerView.VERTICAL)
+        )*/
+
+        //GERENCIADORES DE LAYOUT
+
+        /*LinearLayoutManager
         rvLista.layoutManager = LinearLayoutManager(this, RecyclerView.VERTICAL,false)
         */
         /*GridLayoutManager

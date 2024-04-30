@@ -5,3 +5,6 @@ RecycleView: CardView
 São containers normalmente utiliza com listas de itens, para exibir
 informações de cada item, podemos adicionar diversos elementos de layout dentro
 de cards.
+
+MensagemAdapter ( O método "onBindViewHolder", vai execultar o total de vezes que o método
+"getItemCount()" retornar )

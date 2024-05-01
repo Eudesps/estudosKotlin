@@ -51,16 +51,19 @@ class RecyclerviewActivity : AppCompatActivity() {
 
         rvLista = findViewById(R.id.rv_lista)
         //AQUI ESTOU PASSANDO UMA FUNCÃO LAMBIDA POR PARÂMETRO
-        rvLista.adapter = MensagemAdapter(lista){nome->
+        /*Se tiver apenas uma função lambida e ela é passada por último, então pode ser feita da
+        forma que está aqui em baixo*/
+        rvLista.adapter = MensagemAdapter(){nome->
             Toast.makeText(this,"Olá $nome", Toast.LENGTH_SHORT).show()
             val intent = Intent(this, LinearLayoutActivity::class.java)
             intent.putExtra("nome", nome)
             startActivity(intent)
         }
+        //Gerenciador de layout que está sendo aplicado no momento
         rvLista.layoutManager = LinearLayoutManager(this, RecyclerView.VERTICAL,false)
 
         /*rvLista.addItemDecoration(
-            Aqui está sendo colocado uma linha separando cada item
+            Aqui está sendo colocado uma linha separando cada item (DIVISOR)
             DividerItemDecoration(this,RecyclerView.VERTICAL)
         )*/
 

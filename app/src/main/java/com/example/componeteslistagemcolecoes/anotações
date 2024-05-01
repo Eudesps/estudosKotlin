@@ -8,3 +8,14 @@ de cards.
 
 MensagemAdapter ( O método "onBindViewHolder", vai execultar o total de vezes que o método
 "getItemCount()" retornar )
+
+INTRODUÇÃO À NOTIFICAÇÃO DE MUDANÇA DE DADOS NO RECYCLEVIEW
+É preciso notificar o adapter a mudança dos dados, esses dados são chamados de "Dataset(Conjunto
+de dados)".
+Muitas vezes é recuperado os dados de uma API, então é montado o Recycleview e então
+os dados vão ser buscados, esses dados podem demorar alguns segundos até serem retornados, e quando
+esses dados forem retornados é precisso notificar o Adapter que os dados foram mudados.
+O recycleview não vai ficar verificando o conjunto de dados a todo momento, apenas quando precisar
+exibir ou reciclar as views. Então sempre que houver mudanças é preciso notifcar o Adapter.
+Métodos de notificação:
+notifyDataSetChanged() - Notifica o Adapter que todo conjunto de dados precisa ser atualizado

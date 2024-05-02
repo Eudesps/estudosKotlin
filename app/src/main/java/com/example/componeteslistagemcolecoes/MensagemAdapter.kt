@@ -17,7 +17,13 @@ class MensagemAdapter(
 ): Adapter<MensagemAdapter.MensagemViweHolder>() {
    // MensagemViweHolder - é a classe que vai armezenar a visualização
 
-    private val lista = mutableListOf<Mensagem>()
+    private var listaMensagens = mutableListOf<Mensagem>()
+
+    fun atualizarListaDados(lista: MutableList<Mensagem>){
+        //listaMensagens.addAll(lista)
+        listaMensagens = lista
+        notifyDataSetChanged()
+    }
     inner class MensagemViweHolder(val itemview: View): ViewHolder(itemview){
        /* val textNome: TextView = itemview.findViewById(R.id.text_nome)
         val textUtima: TextView = itemview.findViewById(R.id.text_ultima)
@@ -58,11 +64,11 @@ class MensagemAdapter(
     }
 
     //getItemCount - Recupera a quantidade de itens, ele vai contar a quantidade de itens
-    override fun getItemCount(): Int =  lista.size
+    override fun getItemCount(): Int =  listaMensagens.size
 
     //Ao vincular o ViewHolder - Aqui é possivel acessar os recursos da visualização
     override fun onBindViewHolder(holder: MensagemViweHolder, position: Int) {
-        val mensagem = lista[position]
+        val mensagem = listaMensagens[position]
         holder.bind(mensagem)
         //Aqui irá ser aplicado os eventos de cliques
 

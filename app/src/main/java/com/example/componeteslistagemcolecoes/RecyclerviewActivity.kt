@@ -71,8 +71,9 @@ class RecyclerviewActivity : AppCompatActivity() {
             this, RecyclerView.VERTICAL,false
         )
         btnExecutar.setOnClickListener {
-            lista.add( Mensagem("Nova Teste", "foi ontem, hj não", "14:40"))
-            mensagemAdapter.atualizarListaDados(lista)
+            mensagemAdapter.executarOperacao()
+            /*lista.add( Mensagem("Nova Teste", "foi ontem, hj não", "14:40"))
+            mensagemAdapter.atualizarListaDados(lista)*/
         }
 
 

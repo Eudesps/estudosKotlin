@@ -1,4 +1,4 @@
-# Estudos kotlin
+# Estudos kotlin, android
 ## Conteúdos 
 1. Classes
 2. Adapter

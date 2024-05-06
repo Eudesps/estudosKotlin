@@ -1,5 +1,5 @@
-# Estudos kotlin
-## Conteúdos 
+# Estudos kotlin, Android
+## Conteúdos vistos
 1. Classes
 2. Adapter
 3. Função escopo 

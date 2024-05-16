@@ -9,6 +9,7 @@
 7. Pair_triple
 8. Interface
 9. RecycleView
+10. ViewBinding
 
 ## Gerenciadores de layout
 - GridLayoutManager

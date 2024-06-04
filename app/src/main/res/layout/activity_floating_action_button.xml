@@ -15,10 +15,51 @@
         android:layout_marginBottom="24dp"
         android:clickable="true"
         android:contentDescription="botão de adicionar"
-        app:backgroundTint="@color/material_dynamic_tertiary30"
+        app:backgroundTint="#3F51B5"
+        app:fabSize="normal"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:rippleColor="@color/design_default_color_primary_dark"
+        app:rippleColor="#B493FF"
         app:srcCompat="@drawable/ic_adicionar_24"
-        app:tint="@color/white"/>
+        app:tint="@color/white" />
+
+    <androidx.constraintlayout.widget.Group
+        android:id="@+id/groupMenu"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="invisible"
+        app:constraint_referenced_ids="fabAddCard,fabAddFolder"
+        tools:visibility="visible" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fabAddCard"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="24dp"
+        android:layout_marginBottom="8dp"
+        android:clickable="true"
+        android:contentDescription="botão de adicionar"
+        app:backgroundTint="#2E766F"
+        app:fabCustomSize="40dp"
+        app:fabSize="mini"
+        app:layout_constraintBottom_toTopOf="@+id/fabBotao"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:srcCompat="@drawable/baseline_bookmark_add_24"
+        app:tint="#FFFFFF" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fabAddFolder"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="24dp"
+        android:layout_marginBottom="3dp"
+        android:clickable="true"
+        android:contentDescription="botão de adicionar"
+        app:backgroundTint="#2E766F"
+        app:fabCustomSize="40dp"
+        app:fabSize="mini"
+        app:layout_constraintBottom_toTopOf="@+id/fabAddCard"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:srcCompat="@drawable/baseline_create_new_folder_24"
+        app:tint="#FFFFFF" />
 </androidx.constraintlayout.widget.ConstraintLayout>

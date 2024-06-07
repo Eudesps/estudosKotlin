@@ -40,3 +40,5 @@ Changed - é quando já tem um item inserido, o Recycleview já sabe que tem um 
 apensas modificar.
 Inserted - é quando você quer adicionar um novo item.
 ----------------------------------------------------------------------------------------------------
+setOnCheckedChangeListener
+Configura evento em caso do item ter seu valor alterado, eviando o novo valor.

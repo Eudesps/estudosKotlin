@@ -62,4 +62,20 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:srcCompat="@drawable/baseline_create_new_folder_24"
         app:tint="#FFFFFF" />
+
+    <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
+        android:id="@+id/floatingActionButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="24dp"
+        android:clickable="true"
+        android:contentDescription="botão de adicionar"
+        android:text="ARQUIVAR"
+        app:backgroundTint="#FFFFFF"
+        app:icon="@drawable/ic_arquivar_24"
+        app:iconTint="#217782"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/ic_arquivar_24" />
 </androidx.constraintlayout.widget.ConstraintLayout>

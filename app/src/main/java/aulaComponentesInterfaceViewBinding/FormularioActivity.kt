@@ -1,12 +1,16 @@
 package aulaComponentesInterfaceViewBinding
 
 import android.os.Bundle
+import android.view.View
+import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.content.ContextCompat
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.example.componeteslistagemcolecoes.R
 import com.example.componeteslistagemcolecoes.databinding.ActivityFormularioBinding
+import com.google.android.material.snackbar.Snackbar
 
 class FormularioActivity : AppCompatActivity() {
 
@@ -27,7 +31,9 @@ class FormularioActivity : AppCompatActivity() {
             btnEnviar.setOnClickListener {
                 //checkbox()
                 //radioButton()
-                switchToggle()
+                //switchToggle()
+                criarSnackBar(it)
+                //Snackbar.make(it,"Alteração feita com sucesso", Snackbar.LENGTH_LONG ).show()
             }
 
             /*cbConfirmacao.setOnCheckedChangeListener { _, isChecked ->
@@ -45,6 +51,27 @@ class FormularioActivity : AppCompatActivity() {
             /*rbMasculino.setOnClickListener {  }
             rbMasculino.setOnCheckedChangeListener { buttonView, isChecked ->  }*/
         }
+    }
+
+    private fun criarSnackBar(view: View) {
+        val snackbar = Snackbar.make(view, "Alteração feita", Snackbar.LENGTH_LONG)
+
+        snackbar.setAction("Desfazer"){
+            Toast.makeText(this, "Desfeito", Toast.LENGTH_SHORT).show()
+        }
+
+        //MUDANDO CORES DOS COMPONENTES DA SNACKBAR
+        /*snackbar.setTextColor(ContextCompat.getColor(
+                this, R.color.black
+            ))
+        snackbar.setActionTextColor(ContextCompat.getColor(
+            this, android.R.color.holo_blue_light
+        ))
+        snackbar.setBackgroundTint(ContextCompat.getColor(
+            this, android.R.color.holo_green_light
+        ))*/
+
+        snackbar.show()
     }
 
     private fun switchToggle() {

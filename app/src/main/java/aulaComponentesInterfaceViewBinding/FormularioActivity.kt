@@ -1,9 +1,11 @@
 package aulaComponentesInterfaceViewBinding
 
+import android.net.Uri.Builder
 import android.os.Bundle
 import android.view.View
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
+import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
 import androidx.core.view.ViewCompat
@@ -32,8 +34,9 @@ class FormularioActivity : AppCompatActivity() {
                 //checkbox()
                 //radioButton()
                 //switchToggle()
-                criarSnackBar(it)
+                //criarSnackBar(it)
                 //Snackbar.make(it,"Alteração feita com sucesso", Snackbar.LENGTH_LONG ).show()
+                caixaDialogoAlerta()
             }
 
             /*cbConfirmacao.setOnCheckedChangeListener { _, isChecked ->
@@ -51,6 +54,43 @@ class FormularioActivity : AppCompatActivity() {
             /*rbMasculino.setOnClickListener {  }
             rbMasculino.setOnCheckedChangeListener { buttonView, isChecked ->  }*/
         }
+    }
+
+    private fun caixaDialogoAlerta() {
+        //MANEIRA USANDO O ENCADIAMENTO DE MÉTODOS
+        AlertDialog.Builder(this)
+            .setTitle("Confirmar exclusão?")
+            .setMessage("Tem certeza de que quer remover esse item?")
+            .setNegativeButton("CANCELAR"){ _,posicao ->
+                Toast.makeText(this, "Cancelar clicado", Toast.LENGTH_SHORT).show()
+            }
+            .setPositiveButton("REMOVER"){ _, posicao ->
+                Toast.makeText(this, "Remover ($posicao)", Toast.LENGTH_SHORT).show()
+            }
+            .setCancelable(false)
+            .create()
+            .show()
+
+       /* val alertBuider = AlertDialog.Builder(this)
+        alertBuider.setTitle("Confirmar exclusão?")
+        alertBuider.setMessage("Tem certeza de que quer remover esse item?")
+
+        alertBuider.setNegativeButton("CANCELAR"){ _,posicao ->
+            Toast.makeText(this, "Cancelar clicado", Toast.LENGTH_SHORT).show()
+        }
+        alertBuider.setPositiveButton("REMOVER"){ _, posicao ->
+            Toast.makeText(this, "Remover ($posicao)", Toast.LENGTH_SHORT).show()
+        }
+
+        *//*esse método força o usuário a tomar uma decição do AlertDioalog, não dando ao usuário a
+        posibilidade de sair desse alert sem antes fazer uma escolha.*//*
+        alertBuider.setCancelable(false)
+        alertBuider.setNeutralButton("Ajuda"){ _, posicao ->
+            Toast.makeText(this, "Ajuda", Toast.LENGTH_SHORT).show()
+        }
+        alertBuider.setIcon(R.drawable.baseline_add_alert_24)
+
+        val alertDialog = alertBuider.create().show()*/
     }
 
     private fun criarSnackBar(view: View) {

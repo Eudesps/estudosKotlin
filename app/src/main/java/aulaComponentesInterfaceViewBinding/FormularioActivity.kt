@@ -3,6 +3,8 @@ package aulaComponentesInterfaceViewBinding
 import android.net.Uri.Builder
 import android.os.Bundle
 import android.view.View
+import android.widget.AdapterView
+import android.widget.ArrayAdapter
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AlertDialog
@@ -12,6 +14,7 @@ import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.example.componeteslistagemcolecoes.R
 import com.example.componeteslistagemcolecoes.databinding.ActivityFormularioBinding
+import com.google.android.material.navigation.NavigationBarView.OnItemSelectedListener
 import com.google.android.material.snackbar.Snackbar
 
 class FormularioActivity : AppCompatActivity() {
@@ -28,7 +31,7 @@ class FormularioActivity : AppCompatActivity() {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
-
+        spinnerExibicao()
         with(binding){
             btnEnviar.setOnClickListener {
                 //checkbox()
@@ -36,7 +39,9 @@ class FormularioActivity : AppCompatActivity() {
                 //switchToggle()
                 //criarSnackBar(it)
                 //Snackbar.make(it,"Alteração feita com sucesso", Snackbar.LENGTH_LONG ).show()
-                caixaDialogoAlerta()
+                //caixaDialogoAlerta()
+                spinnerSelecionarCategoria()
+
             }
 
             /*cbConfirmacao.setOnCheckedChangeListener { _, isChecked ->
@@ -53,6 +58,43 @@ class FormularioActivity : AppCompatActivity() {
 
             /*rbMasculino.setOnClickListener {  }
             rbMasculino.setOnCheckedChangeListener { buttonView, isChecked ->  }*/
+        }
+    }
+
+    private fun spinnerSelecionarCategoria() {
+        //SELECIONANDO UM ITEM EM SPINNER
+        val itemSelecionado = binding.spinnerCategoria.selectedItem
+        val itemPosicao = binding.spinnerCategoria.selectedItemPosition
+
+        if (itemPosicao == 0){
+            Toast.makeText(this, "Selecione um item", Toast.LENGTH_SHORT).show()
+        }else{
+            binding.textResultado.text = "Selecionado: $itemSelecionado, pos: $itemPosicao"
+        }
+    }
+
+    private fun spinnerExibicao() {
+        val categorias = listOf("--","Casacos", "Camisetas", "Short", "Calça")
+        binding.spinnerCategoria.adapter = ArrayAdapter<String>(
+            this,
+            android.R.layout.simple_spinner_dropdown_item,
+            categorias
+        )
+
+        binding.spinnerCategoria.onItemSelectedListener = object: AdapterView.OnItemSelectedListener{
+            override fun onItemSelected(
+                parent: AdapterView<*>?,
+                view: View?,
+                position: Int,
+                id: Long
+            ) {
+                //val itemSelecionado = parent?.getItemAtPosition(position)
+                val itemSelecionado = parent?.selectedItem
+                binding.textResultado.text = itemSelecionado.toString()
+            }
+
+            override fun onNothingSelected(parent: AdapterView<*>?) {}
+
         }
     }
 

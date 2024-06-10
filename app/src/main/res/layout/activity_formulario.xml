@@ -68,12 +68,18 @@
             android:layout_height="wrap_content"
             android:text="Ativar"
             android:textColor="@color/white"
-            android:trackTint="#6FA1FB" />
+            android:trackTint="#6FA1FB"
+            />
 
         <ToggleButton
             android:id="@+id/toggleAtivo"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
+
+        <Spinner
+            android:id="@+id/spinnerCategoria"
+            android:layout_width="match_parent"
+            android:layout_height="48dp" />
 
         <Button
             android:id="@+id/btnEnviar"

@@ -31,14 +31,49 @@
             android:inputType="text"
             android:textColorHint="#645E5E" />
 
+        <RadioGroup
+            android:id="@+id/rgSexo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <RadioButton
+                android:id="@+id/rbMasculino"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:buttonTint="#9C27B0"
+                android:text="Masculino"
+                android:textColor="#F8F8F8" />
+
+            <RadioButton
+                android:id="@+id/rbFeminino"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Feminino"
+                android:textColor="#FFFFFF" />
+
+        </RadioGroup>
+
         <CheckBox
             android:id="@+id/cbConfirmacao"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:buttonTint="#AFAEAE"
+            android:buttonTint="#A69F9F"
             android:checked="false"
             android:text="Sim, quero receber e-mails"
             android:textColor="#FFFCFC" />
+
+        <Switch
+            android:id="@+id/switchNotificacoes"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Ativar"
+            android:textColor="@color/white"
+            android:trackTint="#6FA1FB" />
+
+        <ToggleButton
+            android:id="@+id/toggleAtivo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
 
         <Button
             android:id="@+id/btnEnviar"

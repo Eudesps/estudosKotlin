@@ -33,12 +33,14 @@ class ToolbarActionbarActivity : AppCompatActivity() {
     }
 
     private fun inicializarToolBar() {
-        binding.tbPrincipal.title = "Youtube"
-        binding.tbPrincipal.setTitleTextColor(
+        binding.includeToolbar.tbPrincipal.title = "Youtube"
+        //ContextCompat.getColor() é um método utilitário que fornece uma maneira segura de obter
+        // uma cor de um recurso de cor, levando em consideração diferentes versões do Android.
+        binding.includeToolbar.tbPrincipal.setTitleTextColor(
             ContextCompat.getColor(this, R.color.white)
         )
-        binding.tbPrincipal.inflateMenu(R.menu.menu_principal)
-        binding.tbPrincipal.setOnMenuItemClickListener { menuItem ->
+        binding.includeToolbar.tbPrincipal.inflateMenu(R.menu.menu_principal)
+        binding.includeToolbar.tbPrincipal.setOnMenuItemClickListener { menuItem ->
             when (menuItem.itemId) {
                 R.id.item_pesquisar -> {
                     Toast.makeText(applicationContext, "Item PESQUISA clicado", Toast.LENGTH_SHORT)
@@ -108,7 +110,7 @@ class ToolbarActionbarActivity : AppCompatActivity() {
         return true
     }
 
-    *//*Não é necesário adicionar um evento de click, esse método já fiz isso, pois ele só será
+    *//*Não é necesário adicionar um evento de click, esse método já faz isso, pois ele só será
     chamado quando um item for clicado.*//*
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         *//*Quando for clicado o item clicado e identificado e é possível identificar qual foi por

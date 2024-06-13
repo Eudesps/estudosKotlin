@@ -5,10 +5,9 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="aulaComponentesInterfaceViewBinding.ToolbarActionbarActivity">
+    tools:context="aulaComponentesInterfaceViewBinding.NovaActivity">
 
     <include
-        android:id="@+id/includeToolbar"
         layout="@layout/toolbar"
         android:layout_width="0dp"
         android:layout_height="wrap_content"

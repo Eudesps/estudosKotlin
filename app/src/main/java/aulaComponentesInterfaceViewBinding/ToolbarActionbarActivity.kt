@@ -33,10 +33,45 @@ class ToolbarActionbarActivity : AppCompatActivity() {
     }
 
     private fun inicializarToolBar() {
-        binding.tbPrincipal.title = "Fass"
+        binding.tbPrincipal.title = "Youtube"
         binding.tbPrincipal.setTitleTextColor(
             ContextCompat.getColor(this, R.color.white)
         )
+        binding.tbPrincipal.inflateMenu(R.menu.menu_principal)
+        binding.tbPrincipal.setOnMenuItemClickListener { menuItem ->
+            when (menuItem.itemId) {
+                R.id.item_pesquisar -> {
+                    Toast.makeText(applicationContext, "Item PESQUISA clicado", Toast.LENGTH_SHORT)
+                        .show()
+                    true
+                }
+
+                R.id.item_adicionar -> {
+                    Toast.makeText(applicationContext, "Item ADICIONAR clicado", Toast.LENGTH_SHORT)
+                        .show()
+                    true
+                }
+
+                R.id.item_config -> {
+                    Toast.makeText(
+                        applicationContext,
+                        "Item CONFIGURAÇÃO clicado",
+                        Toast.LENGTH_SHORT
+                    ).show()
+                    true
+                }
+
+                R.id.item_sair -> {
+                    Toast.makeText(applicationContext, "Item SAIR clicado", Toast.LENGTH_SHORT)
+                        .show()
+                    true
+                }
+
+                else -> {
+                    true
+                }
+            }
+        }
     }
 
     private fun inicializarActionBar() {

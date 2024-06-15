@@ -13,8 +13,10 @@ import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.StaggeredGridLayoutManager
+import com.example.componeteslistagemcolecoes.databinding.ActivityRecyclerviewBinding
 
 class RecyclerviewActivity : AppCompatActivity() {
+    private val binding by lazy { ActivityRecyclerviewBinding.inflate(layoutInflater) }
 
     private lateinit var rvLista: RecyclerView
     private lateinit var btnExecutar: Button
@@ -23,7 +25,7 @@ class RecyclerviewActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
-        setContentView(R.layout.activity_recyclerview)
+        setContentView(binding.root)
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.cbConfirmacao)) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
@@ -52,8 +54,8 @@ class RecyclerviewActivity : AppCompatActivity() {
             Mensagem("Camila", "foi ontem, hj não", "14:40")
             )
 
-        rvLista = findViewById(R.id.rv_lista)
-        btnExecutar = findViewById(R.id.btn_clique)
+        /*rvLista = findViewById(R.id.rv_lista)
+        btnExecutar = findViewById(R.id.btn_clique)*/
 
         //AQUI ESTOU PASSANDO UMA FUNCÃO LAMBIDA POR PARÂMETRO
         /*Se tiver apenas uma função lambida e ela é passada por último, então pode ser feita da
@@ -64,13 +66,15 @@ class RecyclerviewActivity : AppCompatActivity() {
             intent.putExtra("nome", nome)
             startActivity(intent)
         }
-        rvLista.adapter = mensagemAdapter
+        binding.rvLista.adapter = mensagemAdapter
         mensagemAdapter.atualizarListaDados(lista)
+
         //Gerenciador de layout que está sendo aplicado no momento
-        rvLista.layoutManager = LinearLayoutManager(
+        binding.rvLista.layoutManager = LinearLayoutManager(
             this, RecyclerView.VERTICAL,false
         )
-        btnExecutar.setOnClickListener {
+
+        binding.btnClique.setOnClickListener {
             mensagemAdapter.executarOperacao()
             /*lista.add( Mensagem("Nova Teste", "foi ontem, hj não", "14:40"))
             mensagemAdapter.atualizarListaDados(lista)*/

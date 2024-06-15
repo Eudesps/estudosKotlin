@@ -9,6 +9,7 @@ import android.widget.Toast
 import androidx.cardview.widget.CardView
 import androidx.recyclerview.widget.RecyclerView.Adapter
 import androidx.recyclerview.widget.RecyclerView.ViewHolder
+import com.example.componeteslistagemcolecoes.databinding.ItemCardviewBinding
 
 class MensagemAdapter(
     /*Estou passado como parâmetro uma String para que o nome seja enviado para a outra tela,
@@ -33,26 +34,26 @@ class MensagemAdapter(
         listaMensagens = lista
         notifyDataSetChanged()
     }
-    inner class MensagemViweHolder(val itemview: View): ViewHolder(itemview){
+    inner class MensagemViweHolder(val binding: ItemCardviewBinding): ViewHolder(binding.root){
        /* val textNome: TextView = itemview.findViewById(R.id.text_nome)
         val textUtima: TextView = itemview.findViewById(R.id.text_ultima)
         val textHorario: TextView = itemview.findViewById(R.id.text_horario)*/
 
-       val textNome: TextView = itemview.findViewById(R.id.text_card_nome)
+       /*val textNome: TextView = itemview.findViewById(R.id.text_card_nome)
        val textUtima: TextView = itemview.findViewById(R.id.text_card_ultima)
        val imagePerfil: ImageView = itemview.findViewById(R.id.image_card_view)
-       val cardView: CardView = itemview.findViewById(R.id.card_view_layout)
+       val cardView: CardView = itemview.findViewById(R.id.card_view_layout)*/
 
        fun bind(mensagem: Mensagem){ //Conectar com a interface com o objeto view
-           textNome.text = mensagem.nome
-           textUtima.text = mensagem.ultima
+           binding.textCardNome.text = mensagem.nome
+           binding.textCardUltima.text = mensagem.ultima
 
-           val contexto = imagePerfil.context
+        /*   val contexto = imagePerfil.context
            imagePerfil.setOnClickListener {
                Toast.makeText( contexto, "Olá ${mensagem.nome}", Toast.LENGTH_SHORT ).show()
-           }
-           val contextocard = imagePerfil.context
-           cardView.setOnClickListener {
+           }*/
+           //val contextocard = imagePerfil.context
+           binding.cardViewLayout.setOnClickListener {
               clique(mensagem.nome)
            }
        }
@@ -66,8 +67,11 @@ class MensagemAdapter(
        /*val itemview = layoutInflater.inflate(
             R.layout.item_lista,parent,false
        )*/
-        val itemview = layoutInflater.inflate(
+        /*val itemview = layoutInflater.inflate(
             R.layout.item_cardview,parent,false
+        )*/
+        val itemview =  ItemCardviewBinding.inflate(
+            layoutInflater, parent, false
         )
         return MensagemViweHolder(itemview)
     }

@@ -1,5 +1,6 @@
 package aulaComponentesInterfaceViewBinding
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuInflater
@@ -33,9 +34,13 @@ class ToolbarActionbarActivity : AppCompatActivity() {
     }
 
     private fun inicializarToolBar() {
+        binding.btnAbrirNova.setOnClickListener {
+            startActivity(Intent(this,NovaActivity::class.java))
+        }
+
         binding.includeToolbar.tbPrincipal.title = "Youtube"
-        //ContextCompat.getColor() é um método utilitário que fornece uma maneira segura de obter
-        // uma cor de um recurso de cor, levando em consideração diferentes versões do Android.
+        /*ContextCompat.getColor() é um método utilitário que fornece uma maneira segura de obter
+        uma cor de um recurso de cor, levando em consideração diferentes versões do Android */
         binding.includeToolbar.tbPrincipal.setTitleTextColor(
             ContextCompat.getColor(this, R.color.white)
         )

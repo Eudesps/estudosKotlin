@@ -15,13 +15,17 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toTopOf="parent"
+        app:navigationIconTint="#FFFFFF"
+        app:subtitleTextColor="#FFFFFF"
+        app:titleTextColor="#FFFFFF">
 
         <androidx.constraintlayout.widget.ConstraintLayout
-            tools:layout_editor_absoluteX="16dp"
-            tools:layout_editor_absoluteY="75dp"
+            android:id="@+id/clLogo"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            tools:layout_editor_absoluteX="16dp"
+            tools:layout_editor_absoluteY="75dp">
 
             <ImageView
                 android:id="@+id/imageView3"

@@ -66,6 +66,7 @@ class RecyclerviewActivity : AppCompatActivity() {
             intent.putExtra("nome", nome)
             startActivity(intent)
         }
+        //RecycleView - rvLista
         binding.rvLista.adapter = mensagemAdapter
         mensagemAdapter.atualizarListaDados(lista)
 

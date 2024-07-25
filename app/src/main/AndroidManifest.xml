@@ -13,9 +13,12 @@
         android:theme="@style/Theme.ComponetesListagemColecoes"
         tools:targetApi="31">
         <activity
-            android:name="aulaComponentesInterfaceViewBinding.NovaActivity"
-            android:parentActivityName="aulaComponentesInterfaceViewBinding.ToolbarActionbarActivity"
+            android:name=".Adapter"
             android:exported="false" />
+        <activity
+            android:name="aulaComponentesInterfaceViewBinding.NovaActivity"
+            android:exported="false"
+            android:parentActivityName="aulaComponentesInterfaceViewBinding.ToolbarActionbarActivity" />
         <activity
             android:name="aulaComponentesInterfaceViewBinding.FormularioActivity"
             android:exported="false" />
